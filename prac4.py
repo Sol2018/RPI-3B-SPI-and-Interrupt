@@ -17,3 +17,6 @@ def display(channel):
 	for x in range(5):
 		print displayResults[x]
 	print("\n\n")
+	
+def timerString():
+	return '{:02}'.format(int(timer/60)) + ":" + '{:02}'.format(int(timer - 60*(int(timer/60)))) + ":" + '{:02}'.format(int(100*(timer - int(timer))))
