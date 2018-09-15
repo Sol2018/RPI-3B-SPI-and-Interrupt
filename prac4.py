@@ -50,9 +50,6 @@ def frequency(channel):
     print("\nfrequency changed from "+str(freq[selector]) + "s")
     selector = (selector + 1)%3        #switching current frequency to the next possible frequency in the freq array
     print("to " + str(freq[selector]) + "s\n")
-<<<<<<< HEAD
-=======
-
 
 def stop(channel):
 	global stop_start
@@ -120,5 +117,3 @@ except KeyboardInterrupt:
 
 #release GPIO pins from their current operations to avoid breaking the RPi
 GPIO.cleanup()
-
->>>>>>> MLSSOL001
