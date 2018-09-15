@@ -26,3 +26,24 @@ GPIO.setup(pins["reset"], GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.setup(pins["frequency"], GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.setup(pins["stop"], GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.setup(pins["display"], GPIO.IN, pull_up_down=GPIO.PUD_UP)
+
+#global variables
+timer = 0
+freq = [0.5, 1, 2]
+selector = 0;
+stop_start = True
+displayResults = [0]*5
+counter = 0
+
+#functions used by buttons
+def reset(channel):
+    global timer
+    timer = 0 #resetting timer value to zero
+    system('clear')
+    print("Time             Timer           Pot          Temp          Light")
+
+def frequency(channel):
+    global selector
+    print("\nfrequency changed from "+str(freq[selector]) + "s")
+    selector = (selector + 1)%3        #switching current frequency to the next possible frequency in the freq array
+    print("to " + str(freq[selector]) + "s\n")
