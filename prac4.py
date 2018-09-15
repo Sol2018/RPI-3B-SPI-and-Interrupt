@@ -10,3 +10,10 @@ def stop(channel):
 		counter = 0 #resetting the last first five values
 		global displayResults
 		displayResults = [0]*5
+
+def display(channel):
+	print("\nFirst Five Results\nTime             Timer           Pot          Temp          Light")
+
+	for x in range(5):
+		print displayResults[x]
+	print("\n\n")
