@@ -31,3 +31,8 @@ def temperatureValue(channel):
 	volts = (value * 3.3) / float(1024)
 	tempC = 100.0*volts - 50.0
 	return str(round(tempC,1)) + " C"
+
+def lightValue(channel):
+	value = mcp.read_adc(channel)
+        volts = (value * 3.3) / float(1024)
+        return str(round(100*volts/3.3,1))+" %"
