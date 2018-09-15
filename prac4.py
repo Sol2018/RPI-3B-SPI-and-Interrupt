@@ -20,3 +20,8 @@ def display(channel):
 	
 def timerString():
 	return '{:02}'.format(int(timer/60)) + ":" + '{:02}'.format(int(timer - 60*(int(timer/60)))) + ":" + '{:02}'.format(int(100*(timer - int(timer))))
+
+def potentiometerValue(channel):
+	value = mcp.read_adc(channel)
+        volts = (value * 3.3) / float(1024)
+	return str(round(volts,1))+" V"
