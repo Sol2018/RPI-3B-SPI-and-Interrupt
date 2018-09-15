@@ -25,3 +25,9 @@ def potentiometerValue(channel):
 	value = mcp.read_adc(channel)
         volts = (value * 3.3) / float(1024)
 	return str(round(volts,1))+" V"
+
+def temperatureValue(channel):
+	value = mcp.read_adc(channel)
+	volts = (value * 3.3) / float(1024)
+	tempC = 100.0*volts - 50.0
+	return str(round(tempC,1)) + " C"
